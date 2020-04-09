@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b54d933c-a709-4845-90a1-10504001cf12" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/BookReviewService/UserService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="30a2f2d3-10c2-428f-822e-dc214f0ccc5f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BookReviewService/UserService/?xsd=xsd2" />
+    <MetadataFile FileName="UserService.wsdl" MetadataType="Wsdl" ID="64adb528-fd0e-4917-8219-e0cfc875d8f4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BookReviewService/UserService/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="13e1b1e0-f135-4de6-91b9-e68602b704bc" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BookReviewService/UserService/?xsd=xsd0" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="2dfe7e44-ea3c-4da4-8145-d291ad3b3d00" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BookReviewService/UserService/?xsd=xsd1" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="c005484a-b174-4db6-a413-a20479c4071b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BookReviewService/UserService/?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
