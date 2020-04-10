@@ -12,16 +12,17 @@
                   Third: Post a review <br />
 
                   <br />
-                  Done.!!
+                  Done.!!<br />
+                  <asp:Button ID="registerBtn" CssClass="btn btn-primary" runat="server" Text="Register Now >>" OnClick="registerBtn_Click" />
               </div>
            
-        </div>
-        <div class="col-md-4">
-            <p>
-               
-        </div>
-        <div class="col-md-4">
-        </div>
+        </div> <hr />
+        <div class ="jumbotron jumbotron-fluid ">
+            Search Book to Review:
+            <asp:Label ID="tipLbl" runat="server" CssClass="alert-danger"></asp:Label>
+            <asp:TextBox ID="searchTxt" CssClass="form-control" runat="server" Width="463px"></asp:TextBox><br />
+            <asp:Button ID="searchBtn" CssClass="btn btn-success" runat="server" Text="Search" OnClick="searchBtn_Click" />
+        </div>    
     </div>
 
 </asp:Content>

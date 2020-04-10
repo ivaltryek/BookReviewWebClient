@@ -15,10 +15,7 @@ namespace BookReviewWebClient
 
         }
 
-        protected void registerBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Register");
-        }
+        
 
         protected void logInNowBtn_Click(object sender, EventArgs e)
         {

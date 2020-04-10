@@ -33,7 +33,6 @@
                     <div class="form-group">
                         <asp:Button ID="logInNowBtn" CssClass="btn btn-primary" runat="server" 
                             Text="Log In Now" OnClick="logInNowBtn_Click" /> &nbsp;
-                        <asp:Button ID="registerBtn" CssClass="btn btn-info"  runat="server" Text="Not Registered?" OnClick="registerBtn_Click" />
                         
                     </div>
                     

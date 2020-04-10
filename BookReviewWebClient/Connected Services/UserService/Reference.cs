@@ -169,6 +169,12 @@ namespace BookReviewWebClient.UserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/LoginUser", ReplyAction="http://tempuri.org/IUserService/LoginUserResponse")]
         System.Threading.Tasks.Task<BookReviewWebClient.UserService.User> LoginUserAsync(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DoesUserNameExists", ReplyAction="http://tempuri.org/IUserService/DoesUserNameExistsResponse")]
+        bool DoesUserNameExists(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DoesUserNameExists", ReplyAction="http://tempuri.org/IUserService/DoesUserNameExistsResponse")]
+        System.Threading.Tasks.Task<bool> DoesUserNameExistsAsync(string userName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -212,6 +218,14 @@ namespace BookReviewWebClient.UserService {
         
         public System.Threading.Tasks.Task<BookReviewWebClient.UserService.User> LoginUserAsync(string email, string password) {
             return base.Channel.LoginUserAsync(email, password);
+        }
+        
+        public bool DoesUserNameExists(string userName) {
+            return base.Channel.DoesUserNameExists(userName);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DoesUserNameExistsAsync(string userName) {
+            return base.Channel.DoesUserNameExistsAsync(userName);
         }
     }
 }

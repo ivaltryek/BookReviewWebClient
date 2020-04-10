@@ -19,6 +19,12 @@
   <wsdl:message name="IUserService_LoginUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_DoesUserNameExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoesUserNameExists" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_DoesUserNameExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoesUserNameExistsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/RegisterUser" message="tns:IUserService_RegisterUser_InputMessage" />
@@ -27,6 +33,10 @@
     <wsdl:operation name="LoginUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/LoginUser" message="tns:IUserService_LoginUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/LoginUserResponse" message="tns:IUserService_LoginUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesUserNameExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/DoesUserNameExists" message="tns:IUserService_DoesUserNameExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/DoesUserNameExistsResponse" message="tns:IUserService_DoesUserNameExists_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
@@ -42,6 +52,15 @@
     </wsdl:operation>
     <wsdl:operation name="LoginUser">
       <soap:operation soapAction="http://tempuri.org/IUserService/LoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoesUserNameExists">
+      <soap:operation soapAction="http://tempuri.org/IUserService/DoesUserNameExists" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
