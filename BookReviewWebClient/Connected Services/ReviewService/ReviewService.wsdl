@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReviewService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/BookReviewService/ReviewService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/BookReviewService/ReviewService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/BookReviewService/ReviewService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BookReviewService.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReviewService_SetReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetReview" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_SetReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_GetMyReviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyReviews" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_GetMyReviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyReviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_EditReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditReview" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_EditReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_DeleteReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReview" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_DeleteReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_CountBookReviewScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:CountBookReviewScore" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_CountBookReviewScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CountBookReviewScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_GetBookReviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookReviews" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_GetBookReviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookReviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_DoesReviewExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoesReviewExists" />
+  </wsdl:message>
+  <wsdl:message name="IReviewService_DoesReviewExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoesReviewExistsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReviewService">
+    <wsdl:operation name="SetReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReviewService/SetReview" message="tns:IReviewService_SetReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReviewService/SetReviewResponse" message="tns:IReviewService_SetReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyReviews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReviewService/GetMyReviews" message="tns:IReviewService_GetMyReviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReviewService/GetMyReviewsResponse" message="tns:IReviewService_GetMyReviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReviewService/EditReview" message="tns:IReviewService_EditReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReviewService/EditReviewResponse" message="tns:IReviewService_EditReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReviewService/DeleteReview" message="tns:IReviewService_DeleteReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReviewService/DeleteReviewResponse" message="tns:IReviewService_DeleteReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CountBookReviewScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReviewService/CountBookReviewScore" message="tns:IReviewService_CountBookReviewScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReviewService/CountBookReviewScoreResponse" message="tns:IReviewService_CountBookReviewScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookReviews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReviewService/GetBookReviews" message="tns:IReviewService_GetBookReviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReviewService/GetBookReviewsResponse" message="tns:IReviewService_GetBookReviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesReviewExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReviewService/DoesReviewExists" message="tns:IReviewService_DoesReviewExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReviewService/DoesReviewExistsResponse" message="tns:IReviewService_DoesReviewExists_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IReviewService" type="tns:IReviewService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetReview">
+      <soap:operation soapAction="http://tempuri.org/IReviewService/SetReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyReviews">
+      <soap:operation soapAction="http://tempuri.org/IReviewService/GetMyReviews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditReview">
+      <soap:operation soapAction="http://tempuri.org/IReviewService/EditReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReview">
+      <soap:operation soapAction="http://tempuri.org/IReviewService/DeleteReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountBookReviewScore">
+      <soap:operation soapAction="http://tempuri.org/IReviewService/CountBookReviewScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookReviews">
+      <soap:operation soapAction="http://tempuri.org/IReviewService/GetBookReviews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoesReviewExists">
+      <soap:operation soapAction="http://tempuri.org/IReviewService/DoesReviewExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReviewService">
+    <wsdl:port name="BasicHttpBinding_IReviewService" binding="tns:BasicHttpBinding_IReviewService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/BookReviewService/ReviewService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

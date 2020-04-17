@@ -1,4 +1,5 @@
 ﻿using BookReviewWebClient.BookService;
+using BookReviewWebClient.ReviewService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,11 @@ namespace BookReviewWebClient.Reviews
                 try
                 {
                     var searchResults = bookOperationServiceClient.FindBookByName(Request.QueryString["s"]);
-
+                    foreach(var result in searchResults)
+                    {
+                        ReviewServiceClient reviewServiceClient = new ReviewServiceClient();
+                        reviewServiceClient.CountBookReviewScore(result.BookName);
+                    }
                     searchedResultView.DataSource = searchResults;
                     searchedResultView.DataBind();
                 }
@@ -33,6 +38,7 @@ namespace BookReviewWebClient.Reviews
         {
             GridViewRow row = searchedResultView.SelectedRow;
             Session["ReviewBookName"]= row.Cells[2].Text;
+            Response.Redirect("~/Reviews/PostReview");
 
             
         }
