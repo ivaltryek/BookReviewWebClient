@@ -26,6 +26,7 @@ namespace BookReviewWebClient
 
            if(!searchTxt.Text.ToString().IsNullOrWhiteSpace())
             {
+                Session["SearchText"] = searchTxt.Text.Trim();
                 Response.Redirect("~/Reviews/SearchPage?s=" + searchTxt.Text.Trim());
             }
         }

@@ -30,11 +30,18 @@ namespace BookReviewWebClient
                 };
                 if (userServiceClient.DoesUserNameExists(userNameTxt.Text.ToString()))
                 {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Username does already exists!!')", true);
+
                     Label1.Text = "Username does already exists!!";
 
                 }else
                 {
                     createdUser = userServiceClient.RegisterUser(user);
+                    if(createdUser != null)
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('You have been registered, redirecting in 3 secs..')", true);
+                        Response.AddHeader("REFRESH", "3;URL=../Default.aspx");
+                    }
                 }
                
                 

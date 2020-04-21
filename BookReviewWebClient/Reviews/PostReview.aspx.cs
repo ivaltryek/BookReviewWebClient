@@ -18,7 +18,8 @@ namespace BookReviewWebClient.Reviews
             if(Session["userName"] == null)
             {
                 postReviewBtn.Enabled = false;
-                errLbl.Text = "You may need to Login first to Post A review.";
+                errLbl.Text = "You may need to Login first to Post A review and as well as to view comments.";
+                return;
             }
             
             using(ReviewServiceClient reviewServiceClient = new ReviewServiceClient())
@@ -28,15 +29,19 @@ namespace BookReviewWebClient.Reviews
                 {
                     reviewList = reviewServiceClient.GetBookReviews(Session["ReviewBookName"].ToString()).ToList();
 
-                    var existsReview = reviewServiceClient.DoesReviewExists(Session["userName"].ToString(), Session["ReviewBookName"].ToString());
-                    if (Session["userName"] != null && existsReview != null)
+                    if (Session["userName"] != null)
                     {
-                        postReviewBtn.Text = "Edit";
-                        editFlag = true;
-                        previousCommentLbl.Text = "Previous Comment: " + existsReview.ReviewComment.ToString();
-                        previousScaleLbl.Text = "Previous Scale: " + existsReview.ReviewScale.ToString();
+
+                        var existsReview = reviewServiceClient.DoesReviewExists(Session["userName"].ToString(), Session["ReviewBookName"].ToString());
+                        if (existsReview != null)
+                        {
+                            postReviewBtn.Text = "Edit";
+                            editFlag = true;
+                            previousCommentLbl.Text = "Previous Comment: " + existsReview.ReviewComment.ToString();
+                            previousScaleLbl.Text = "Previous Scale: " + existsReview.ReviewScale.ToString();
+
+                        }
                     }
-                    
                 }
                 catch(Exception)
                 {
@@ -70,6 +75,11 @@ namespace BookReviewWebClient.Reviews
                     var reviewEdit = reviewServiceClient.EditReview(Session["ReviewBookName"].ToString(),
                         Session["userName"].ToString(), editedReview);
                     tipLbl.Text = reviewEdit != null ? "Edited the review.!!" : "Failed to edit the review.!!";
+                    if(reviewEdit != null)
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Review has been edited.!!, Redirecting in 3 secs..')", true);
+                        Response.AddHeader("REFRESH", "3;URL=../Default.aspx");
+                    }
                     editedReview = null;
                 }
                 if (!editFlag)
